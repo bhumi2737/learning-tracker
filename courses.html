@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Courses - Learning Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+  <div class="nav-brand">Learning Tracker</div>
+  <div class="nav-right">
+    <a href="index.html">Home</a>
+    <a href="courses.html">Courses</a>
+    <a href="tracker.html">Tracker</a>
+    <a href="profile.html">Profile</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html" class="btn-login">Login</a>
+    <a href="signup.html" class="btn-signup">Sign up</a>
+  </div>
+</nav>
+
+<div class="courses-hero">
+  <h1>Courses</h1>
+  <p>Pick a course and add it to your tracker.</p>
+  <input type="text" id="searchInput" class="course-search" placeholder="Search for courses...">
+</div>
+
+<div class="container">
+  <div class="courses-grid">
+    <div class="course-card-full">
+      <img src="https://via.placeholder.com/300x200?text=JavaScript" alt="JavaScript Essentials">
+      <div class="course-info">
+        <h3>01. Course 1: JavaScript Essentials</h3>
+        <p>Learn the fundamentals of JavaScript programming.</p>
+        <button onclick="addCourse('JavaScript Essentials')" class="btn-add-course">Add to Tracker</button>
+      </div>
+    </div>
+
+    <div class="course-card-full">
+      <img src="https://via.placeholder.com/300x200?text=Data+Structures" alt="Data Structures">
+      <div class="course-info">
+        <h3>02. Course 2: Data Structures and Algorithms</h3>
+        <p>Dive deep into advanced algorithms and data structures.</p>
+        <button onclick="addCourse('Data Structures and Algorithms')" class="btn-add-course">Add to Tracker</button>
+      </div>
+    </div>
+
+    <div class="course-card-full">
+      <img src="https://via.placeholder.com/300x200?text=React" alt="React Basics">
+      <div class="course-info">
+        <h3>03. Course 3: React Basics</h3>
+        <p>Build real-world applications with modern tools and frameworks.</p>
+        <button onclick="addCourse('React Basics')" class="btn-add-course">Add to Tracker</button>
+      </div>
+    </div>
+
+    <div class="course-card-full">
+      <img src="https://via.placeholder.com/300x200?text=Node.js" alt="Node.js">
+      <div class="course-info">
+        <h3>04. Course 4: Node.js & Express</h3>
+        <p>Master backend development with Node.js and Express frameworks.</p>
+        <button onclick="addCourse('Node.js & Express')" class="btn-add-course">Add to Tracker</button>
+      </div>
+    </div>
+
+    <div class="course-card-full">
+      <img src="https://via.placeholder.com/300x200?text=Python" alt="Python">
+      <div class="course-info">
+        <h3>05. Course 5: Python for Data Science</h3>
+        <p>Learn Python programming for data analysis and machine learning.</p>
+        <button onclick="addCourse('Python for Data Science')" class="btn-add-course">Add to Tracker</button>
+      </div>
+    </div>
+
+    <div class="course-card-full">
+      <img src="https://via.placeholder.com/300x200?text=Web+Design" alt="Web Design">
+      <div class="course-info">
+        <h3>06. Course 6: Advanced Web Design</h3>
+        <p>Create beautiful and responsive websites with modern CSS and design principles.</p>
+        <button onclick="addCourse('Advanced Web Design')" class="btn-add-course">Add to Tracker</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-col">
+      <h4>Learning Tracker</h4>
+      <p>We are here to help you learn, track, and grow.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Courses</h4>
+      <ul>
+        <li><a href="#">JavaScript Essentials</a></li>
+        <li><a href="#">Data Structures</a></li>
+        <li><a href="#">React Basics</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="#">Docs</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="#">Support</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>About</h4>
+      <ul>
+        <li><a href="#">Company</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Learning Tracker. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+<script>
+const searchInput = document.getElementById('searchInput');
+searchInput.addEventListener('keyup', function() {
+  const query = this.value.toLowerCase();
+  const courses = document.querySelectorAll('.course-card-full');
+  courses.forEach(course => {
+    const title = course.querySelector('h3').textContent.toLowerCase();
+    const desc = course.querySelector('p').textContent.toLowerCase();
+    if (title.includes(query) || desc.includes(query)) {
+      course.style.display = 'block';
+    } else {
+      course.style.display = 'none';
+    }
+  });
+});
+</script>
+</body>
+</html>

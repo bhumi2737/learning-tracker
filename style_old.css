@@ -1,0 +1,243 @@
+
+/* global settings */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  /* dark blue moving gradient */
+  background: linear-gradient(120deg, #001f3f 0%, #003366 50%, #001f3f 100%);
+  background-size: 400% 400%;
+  color: #f0f0f0;
+  animation: gradientBG 15s ease infinite, fadeIn 1s ease forwards;
+}
+
+@keyframes gradientBG {
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* navigation bar */
+nav {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav a {
+  color: white;
+  margin-right: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s, transform 0.3s;
+}
+
+nav a:hover {
+  color: #ffdd57;
+  transform: scale(1.1);
+}
+
+/* hero section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 20px;
+  color: white;
+  background: rgba(0,0,0,0.3);
+}
+.hero .hero-text {
+  max-width: 50%;
+  text-align: left;
+}
+.hero img {
+  max-width: 45%;
+  border-radius: 10px;
+}
+
+/* container for login/contact pages */
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+/* forms and boxes */
+.form {
+  background: rgba(255,255,255,0.9);
+  border-radius: 0; /* rectangular*/
+  padding: 30px;
+  max-width: 450px;
+  margin: 20px auto;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* login and contact page specific tweaks */
+.login-box,
+.contact-form {
+  background: linear-gradient(135deg, rgba(0,31,63,0.85), rgba(0,51,102,0.85));
+  color: #fff;
+}
+
+.login-box input,
+.contact-form input,
+.contact-form textarea {
+  background: rgba(255,255,255,0.9);
+}
+
+.login-box button,
+.contact-form button {
+  background: #ff758c;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border 0.3s;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #00b4db;
+  outline: none;
+}
+
+button {
+  background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.form button {
+  margin: 5px;
+}
+button:hover {
+  background: linear-gradient(135deg, #ff7eb3 0%, #ff758c 100%);
+  transform: scale(1.05);
+}
+
+/* table styling */
+table {
+  width: 100%;
+  background: white;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background: #f0f0f0;
+}
+
+tr:nth-child(even) {
+  background: #fafafa;
+}
+
+/* cards */
+.cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  width: calc(33% - 40px);
+  min-width: 240px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.card button {
+  width: 100%;
+  margin-top: 10px;
+}
+.card:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* progress bar for tracker */
+.progress-container {
+  background: rgba(255,255,255,0.8);
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.progress-bar {
+  background: #00b4db;
+  height: 20px;
+  border-radius: 10px;
+  width: 0%;
+  animation: loadProgress 2s forwards;
+}
+
+@keyframes loadProgress {
+  from { width: 0%; }
+  to { width: 70%; }
+}
+
+/* footer */
+footer {
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+  margin-top: 40px;
+}

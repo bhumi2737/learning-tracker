@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+  <div class="nav-brand">Learning Tracker</div>
+  <div class="nav-right">
+    <a href="index.html">Home</a>
+    <a href="courses.html">Courses</a>
+    <a href="tracker.html">Tracker</a>
+    <a href="profile.html">Profile</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">Login</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-text">
+    <h1>Task Tracker</h1>
+    <p>Manage and track your learning tasks</p>
+  </div>
+  <img src="https://via.placeholder.com/300x300?text=Tracker" alt="Tracker illustration">
+</header>
+
+<div class="container">
+<section class="dashboard">
+<h2>My Tasks</h2>
+<div class="form">
+<input type="text" id="topic" placeholder="Topic">
+<input type="text" id="status" placeholder="Status">
+<input type="number" id="hours" placeholder="Hours">
+<button onclick="addTask()">Add Task</button>
+</div>
+
+<div class="form">
+<select id="filterStatus" onchange="fetchTasks()">
+<option value="">All statuses</option>
+<option value="pending">Pending</option>
+<option value="in progress">In Progress</option>
+<option value="done">Done</option>
+</select>
+<button onclick="clearTasks()">Clear All</button>
+<button onclick="toggleSort()" id="sortBtn">Sort by Hours</button>
+</div>
+
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Status</th>
+<th>Hours</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody id="taskTable"></tbody>
+</table>
+</section>
+
+<section class="progress-section">
+<div class="progress-container">
+<h3>Overall Progress</h3>
+<div class="progress-bar"></div>
+<p id="progressText">0% Complete</p>
+</div>
+</section>
+</div>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-col">
+      <h4>Learning Tracker</h4>
+      <p>We are here to help you learn, track, and grow.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Learning Tracker. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+<script>
+window.onload = function() {
+  fetchTasks();
+};
+</script>
+</body>
+</html>

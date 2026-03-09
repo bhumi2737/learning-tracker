@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learning Tracker - Home</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+  <div class="nav-brand">Learning Tracker</div>
+  <div class="nav-right">
+    <a href="profile.html">Profile</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html" class="btn-login">Login</a>
+    <a href="login.html" class="btn-signup">Sign up</a>
+  </div>
+</nav>
+
+<header class="hero-large">
+  <div class="hero-content">
+    <p class="hero-subtitle">Track your learning journey</p>
+    <h1>Learn better. Track progress. Finish stronger.</h1>
+    <p class="hero-desc">Organize courses, measure study hours, and celebrate achievements — all in one place built for learners who mean business.</p>
+    
+    <div class="hero-buttons">
+      <button class="btn-primary" onclick="alert('Getting started...')">Get Started — It's Free</button>
+      <button class="btn-secondary" onclick="window.location.href='tracker.html'">Open Tracker</button>
+      <button class="btn-secondary" onclick="window.location.href='courses.html'">Browse Courses</button>
+    </div>
+    
+    <div class="hero-stats">
+      <div class="stat-item">🔥 Top learners: 1,200+</div>
+      <div class="stat-item">⏰ Avg 12h/week</div>
+      <div class="stat-item">⭐ 4.8 ★ average rating</div>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img src="https://via.placeholder.com/500x400?text=Learn+Together" alt="Learning illustration">
+  </div>
+</header>
+
+<section class="stats-section">
+  <div class="stat-card">
+    <h3>Hours Logged</h3>
+    <p class="stat-number">12345</p>
+  </div>
+  <div class="stat-card">
+    <h3>Active Learners</h3>
+    <p class="stat-number">1200</p>
+  </div>
+  <div class="stat-card">
+    <h3>Achievements</h3>
+    <p class="stat-number">512</p>
+  </div>
+  <div class="stat-card">
+    <h3>Avg Weekly Study</h3>
+    <p class="stat-number">12h</p>
+  </div>
+</section>
+
+<section class="features-section">
+  <h2>Key Features</h2>
+  <div class="cards">
+    <div class="card feature-card">
+      <h3>Track Time</h3>
+      <p>Log study hours and see weekly trends at a glance.</p>
+    </div>
+    <div class="card feature-card">
+      <h3>Achievements</h3>
+      <p>Earn badges and celebrate milestones as you progress.</p>
+    </div>
+    <div class="card feature-card">
+      <h3>Insights</h3>
+      <p>Interactive charts to help you optimize study habits.</p>
+    </div>
+  </div>
+</section>
+
+<section class="courses-section">
+  <h2>Popular Courses</h2>
+  <div class="cards">
+    <div class="card course-card">
+      <img src="https://via.placeholder.com/250x180?text=JavaScript" alt="JavaScript">
+      <h3>JavaScript Essentials</h3>
+      <p>Syntax, DOM, async, and tooling — all in one starter-friendly track.</p>
+      <button onclick="addCourse('JavaScript Essentials')">Add to Tracker</button>
+    </div>
+    <div class="card course-card">
+      <img src="https://via.placeholder.com/250x180?text=Data+Structures" alt="Data Structures">
+      <h3>Data Structures with OOP</h3>
+      <p>Master arrays, stacks, trees, and graphs via real projects.</p>
+      <button onclick="addCourse('Data Structures with OOP')">Add to Tracker</button>
+    </div>
+    <div class="card course-card">
+      <img src="https://via.placeholder.com/250x180?text=React" alt="React">
+      <h3>React Basics</h3>
+      <p>Components, props, hooks, and clean patterns for modern UIs.</p>
+      <button onclick="addCourse('React Basics')">Add to Tracker</button>
+    </div>
+  </div>
+</section>
+
+<section class="pricing-section">
+  <h2>Pricing Plans</h2>
+  <div class="pricing-cards">
+    <div class="pricing-card">
+      <h3>Basic</h3>
+      <p class="price">Rs.499</p>
+      <ul>
+        <li>✓ Progress tracker</li>
+        <li>✓ 3 projects</li>
+        <li>✓ Email support</li>
+      </ul>
+      <button class="btn-choose">Choose</button>
+    </div>
+    <div class="pricing-card">
+      <h3>Standard</h3>
+      <p class="price">Rs.999</p>
+      <ul>
+        <li>✓ Everything in Basic</li>
+        <li>✓ Unlimited projects</li>
+        <li>✓ Weekly insights</li>
+      </ul>
+      <button class="btn-choose">Choose</button>
+    </div>
+    <div class="pricing-card">
+      <h3>Premium</h3>
+      <p class="price">Rs.1499</p>
+      <ul>
+        <li>✓ 1:1 mentor feedback</li>
+        <li>✓ Priority support</li>
+        <li>✓ Certificates</li>
+      </ul>
+      <button class="btn-choose">Choose</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-col">
+      <h4>Learning Tracker</h4>
+      <p>We are here to help you learn, track, and grow.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Courses</h4>
+      <ul>
+        <li><a href="#">JavaScript Essentials</a></li>
+        <li><a href="#">Data Structures</a></li>
+        <li><a href="#">React Basics</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="#">Docs</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="#">Support</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>About</h4>
+      <ul>
+        <li><a href="#">Company</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Learning Tracker. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

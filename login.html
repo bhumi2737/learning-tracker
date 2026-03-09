@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login - Learning Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+  <div class="nav-brand">Learning Tracker</div>
+  <div class="nav-right">
+    <a href="index.html">Home</a>
+    <a href="login.html" class="btn-login">Login</a>
+    <a href="signup.html" class="btn-signup">Sign up</a>
+  </div>
+</nav>
+
+<div class="auth-container">
+  <div class="auth-box login-box">
+    <h1>Login to Learning Tracker</h1>
+    
+    <form onsubmit="handleLogin(event)">
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Password (demo)" required>
+      <button type="submit" class="btn-primary">Login</button>
+    </form>
+    
+    <p class="auth-text">Don't have an account?</p>
+    <a href="signup.html" class="btn-secondary">Create a new account</a>
+    
+    <div class="security-note">
+      <p>🔒 <strong>Note:</strong> This is a local demo app running on HTTP (not HTTPS). The popup you see is Chrome's built-in warning about entering passwords on non-secure sites - it's not a real data breach. In production, always use HTTPS with SSL/TLS certificates to encrypt passwords. Your account stays logged in via localStorage - just refresh or come back to the site to stay connected!</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-col">
+      <h4>Learning Tracker</h4>
+      <p>We are here to help you learn, track, and grow.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Learning Tracker. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+async function handleLogin(e) {
+  e.preventDefault();
+  
+  const email = document.querySelector('input[type="email"]').value;
+  const password = document.querySelector('input[type="password"]').value;
+  
+  try {
+    const response = await fetch('/api/users/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password })
+    });
+    
+    const data = await response.json();
+    
+    if (response.ok) {
+      localStorage.setItem('loggedIn', 'true');
+      localStorage.setItem('userId', data.userId);
+      localStorage.setItem('userName', data.name);
+      alert(`Welcome back, ${data.name}!`);
+      window.location.href = 'index.html';
+    } else {
+      alert(data.message || 'Login failed');
+    }
+  } catch (error) {
+    console.error('Login error:', error);
+    alert('Login failed. Please try again.');
+  }
+}
+</script>
+</body>
+</html>

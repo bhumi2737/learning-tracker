@@ -1,0 +1,16 @@
+[
+  {
+    "id": "a63c8350-ca78-4802-8776-536393a0abe0",
+    "userId": "f7ffb53f-0d0b-48c8-8494-2997412c0c12",
+    "topic": "JavaScript Course",
+    "status": "In Progress",
+    "hours": 2
+  },
+  {
+    "id": "4c74a9a0-0f6e-4178-8873-008caa396eb6",
+    "userId": "534ade14-384e-448f-809f-173b39b7468f",
+    "topic": "Python Course",
+    "status": "Pending",
+    "hours": 1
+  }
+]

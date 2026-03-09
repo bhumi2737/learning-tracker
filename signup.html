@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up - Learning Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+  <div class="nav-brand">Learning Tracker</div>
+  <div class="nav-right">
+    <a href="index.html">Home</a>
+    <a href="login.html" class="btn-login">Login</a>
+    <a href="signup.html" class="btn-signup">Sign up</a>
+  </div>
+</nav>
+
+<div class="auth-container">
+  <div class="auth-box signup-box">
+    <h1>Create Your Account</h1>
+    <p class="signup-subtitle">Join Learning Tracker and start tracking your learning journey today.</p>
+    
+    <form onsubmit="handleSignup(event)">
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <input type="tel" placeholder="Phone Number (10 digits)" pattern="[0-9]{10}">
+      <input type="password" placeholder="Password (demo)" required>
+      <button type="submit" class="btn-primary">Create Account</button>
+    </form>
+    
+    <p class="auth-text">Already have an account?</p>
+    <a href="login.html" class="btn-secondary">Go to Login</a>
+    
+    <div class="security-note">
+      <p>🔒 <strong>Note:</strong> This is a local demo app running on HTTP (not HTTPS). The popup you see is Chrome's built-in warning about entering passwords on non-secure sites - it's not a real data breach. In production, always use HTTPS with SSL/TLS certificates to encrypt passwords. Your account stays logged in via localStorage - just refresh or come back to the site to stay connected!</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-col">
+      <h4>Learning Tracker</h4>
+      <p>We are here to help you learn, track, and grow.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Learning Tracker. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+<script>
+async function handleSignup(e) {
+  e.preventDefault();
+  
+  const name = document.querySelector('input[placeholder="Full Name"]').value;
+  const email = document.querySelector('input[type="email"]').value;
+  const password = document.querySelector('input[type="password"]').value;
+  
+  try {
+    const response = await fetch('/api/users/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, password })
+    });
+    
+    const data = await response.json();
+    
+    if (response.ok) {
+      localStorage.setItem('loggedIn', 'true');
+      localStorage.setItem('userId', data.userId);
+      localStorage.setItem('userName', name);
+      alert(`Account created successfully! Welcome, ${name}!`);
+      window.location.href = 'index.html';
+    } else {
+      alert(data.message || 'Registration failed');
+    }
+  } catch (error) {
+    console.error('Signup error:', error);
+    alert('Registration failed. Please try again.');
+  }
+}
+</script>
+</body>
+</html>

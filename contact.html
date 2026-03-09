@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - Learning Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+  <div class="nav-brand">Learning Tracker</div>
+  <div class="nav-right">
+    <a href="index.html">Home</a>
+    <a href="courses.html">Courses</a>
+    <a href="tracker.html">Tracker</a>
+    <a href="profile.html">Profile</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html" class="btn-login">Login</a>
+    <a href="signup.html" class="btn-signup">Sign up</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="contact-page">
+    <h1>Contact Us</h1>
+    
+    <div class="contact-content">
+      <!-- Contact Form -->
+      <div class="contact-form-section">
+        <form class="contact-form" onsubmit="handleContactSubmit(event)">
+          <input type="text" placeholder="Name" required>
+          <input type="email" placeholder="Email" required>
+          <textarea rows="5" placeholder="Message" required></textarea>
+          <button type="submit" class="btn-primary">Send</button>
+        </form>
+      </div>
+
+      <!-- Support Info -->
+      <div class="support-section">
+        <h2>Support</h2>
+        <p>We are here to help.</p>
+        
+        <div class="support-item">
+          <span class="support-icon">✓</span>
+          <p><strong>Email:</strong> support@trackwise.dev</p>
+        </div>
+        
+        <div class="support-item">
+          <span class="support-icon">✓</span>
+          <p><strong>Hours:</strong> Mon-Fri, 9am–6pm</p>
+        </div>
+        
+        <div class="support-item">
+          <span class="support-icon">✓</span>
+          <p><strong>Community forum</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-col">
+      <h4>Learning Tracker</h4>
+      <p>We are here to help you learn, track, and grow.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Courses</h4>
+      <ul>
+        <li><a href="#">JavaScript Essentials</a></li>
+        <li><a href="#">Data Structures</a></li>
+        <li><a href="#">React Basics</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="#">Docs</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="#">Support</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>About</h4>
+      <ul>
+        <li><a href="#">Company</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Learning Tracker. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+<script>
+function handleContactSubmit(e) {
+  e.preventDefault();
+  alert('Thank you! Your message has been sent.');
+  e.target.reset();
+}
+</script>
+</body>
+</html>
